@@ -15,10 +15,10 @@ composer_update:
 	COMPOSER_ALLOW_SUPERUSER=1 docker compose exec -T mdev-php composer update --no-interaction --classmap-authoritative --optimize-autoloader
 
 build:
-	docker compose -f docker-compose.yaml build
+	docker compose -f docker-compose.yml build
 
 start:
-	docker compose -f docker-compose.yaml up -d
+	docker compose -f docker-compose.yml up -d
 
 stop:
 	docker compose stop
