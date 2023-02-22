@@ -17,10 +17,10 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 #[Route('/api/books')]
 class BookController extends AbstractController
 {
-    private $entityManager;
-    private $bookRepository;
-    private $serializer;
-    private $validator;
+    private EntityManagerInterface $entityManager;
+    private BookRepository $bookRepository;
+    private SerializerInterface $serializer;
+    private ValidatorInterface $validator;
 
     public function __construct(
         EntityManagerInterface $entityManager,

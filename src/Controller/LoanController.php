@@ -11,21 +11,19 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\User;
 use App\Entity\Loan;
-use App\Entity\Book;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 #[Route('/api/loans')]
 class LoanController extends AbstractController
 {
-    private $entityManager;
-    private $loanRepository;
-    private $bookRepository;
-    private $userRepository;
-    private $serializer;
-    private $validator;
+    private EntityManagerInterface $entityManager;
+    private LoanRepository $loanRepository;
+    private BookRepository $bookRepository;
+    private UserRepository $userRepository;
+    private SerializerInterface $serializer;
+    private ValidatorInterface $validator;
 
     public function __construct(
         EntityManagerInterface $entityManager,

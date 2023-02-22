@@ -19,9 +19,9 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 #[Route('/api/users')]
 class UserController extends AbstractController
 {
-    private $entityManager;
-    private $hasherFactory;
-    private $userRepository;
+    private EntityManagerInterface $entityManager;
+    private PasswordHasherFactoryInterface $hasherFactory;
+    private UserRepository $userRepository;
 
     public function __construct(EntityManagerInterface $entityManager, PasswordHasherFactoryInterface $hasherFactory, UserRepository $userRepository)
     {
